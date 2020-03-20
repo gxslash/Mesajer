@@ -58,7 +58,6 @@ public class SelectContactsActivity extends AppCompatActivity {
             if (mStringArray != null) {
                 for (String s : mStringArray) {
                     sb.append("?,");
-                    Log.e("ArrayElements : ", s);
                 }
 
 
