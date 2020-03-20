@@ -33,8 +33,6 @@ public class ModelListGenerator {
                 contactsModel.setId(cursor.getInt(cursor.getColumnIndex(ID)));
                 contactsModel.setName(cursor.getString(cursor.getColumnIndex(NAME)));
 
-                Log.e("Name : ", contactsModel.getName());
-
                 String registerID = String.valueOf(cursor.getInt(cursor.getColumnIndex(ID)));
 
                 StringBuilder phoneNumbers = new StringBuilder();
