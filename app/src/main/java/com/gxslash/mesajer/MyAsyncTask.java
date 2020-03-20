@@ -56,9 +56,6 @@ public class MyAsyncTask extends AsyncTask<Void, String, List<ContactsModel>> {
     protected void onPostExecute(List<ContactsModel> contactsModels) {
         super.onPostExecute(contactsModels);
 
-        Log.e("Context : ", context.getClass().getName());
-
-
         if (context.getClass().getName().equals("com.gxslash.mesajer.SelectContactsActivity")) {
 
             CustomAdapter customAdapter = new CustomAdapter(context, contactsModels);
