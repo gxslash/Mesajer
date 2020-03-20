@@ -68,19 +68,11 @@ public class CustomAdapter extends BaseAdapter {
         textView.setText(contactsModel.getName());
 
         final SelectContactsActivity selectContactsActivity = new SelectContactsActivity();
-
-        Log.e("whichHasIsClicked : ", selectContactsActivity.getIsChecked(mRadioBtn.getTag().toString()) + " which of :" + mRadioBtn.getTag().toString());
-        Log.e("isFinished : ",SelectContactsActivity.isActivityFinished + " ");
-
         mRadioBtn.setChecked(false);
 
         if (!selectContactsActivity.getIsCheckedController().isEmpty()){
-            mRadioBtn.setChecked(selectContactsActivity.getIsChecked(mRadioBtn.getTag().toString()));
-            Log.e("CheckedController : ", selectContactsActivity.getIsChecked(mRadioBtn.getTag().toString()) + " ");
+            mRadioBtn.setChecked(selectContactsActivity.getIsChecked(mRadioBtn.getTag().toString())); 
         }
-        Log.e("Name", contactsModel.getName());
-        Log.e("Name", contactsModel.getId() + " ");
-
 
         mRadioBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -89,7 +81,6 @@ public class CustomAdapter extends BaseAdapter {
 
                 if (isChecked) {
                     selectedStrings.add(mRadioBtn.getTag().toString());
-                    Log.e("Tag : ", mRadioBtn.getTag() + " ");
                     selectContactsActivity.setIsCheckedController(mRadioBtn.getTag().toString(), true);
                 }else{
                     selectContactsActivity.setIsCheckedController(mRadioBtn.getTag().toString(), false);
@@ -99,18 +90,8 @@ public class CustomAdapter extends BaseAdapter {
                 str  = new String[selectedStrings.size()];
                 str = selectedStrings.toArray(str);
 
-                for (String s : str)
-                    Log.e("ArrayElement : ", s);
-
-                System.out.println(selectedStrings);
-
-                System.out.println(str.length);
-
             }
         });
-
-        if (container.hasFocusable())
-            Log.e("Focus : " , " Yes ");
 
         return container;
     }
