@@ -47,8 +47,8 @@ public class ActionMessage {
         contactsModel = contactsModels.get(position);
         String newText = null;
 
-        if(oldText.contains("*/name/*"))
-            newText = oldText.replace("*/name/*", contactsModel.getName());
+        if(oldText.contains("/name/"))
+            newText = oldText.replace("/name/", contactsModel.getName());
         else newText = oldText;
 
         return newText;
