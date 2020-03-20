@@ -26,7 +26,6 @@ public class ActionMessage {
             try {
                 if (!contactsModel.getPhoneNum().equals("")) {
                     SmsManager manager = SmsManager.getDefault();
-                    Log.e("Numbers : ", contactsModel.getPhoneNum() +" ");
                     if (textDesigner(message, position) != null) {
                         manager.sendTextMessage(contactsModel.getPhoneNum(), null, textDesigner(message, position), null, null);
                         Toast.makeText(context, "Toplu mesajınız başarıyla gönderildi", Toast.LENGTH_SHORT).show();
